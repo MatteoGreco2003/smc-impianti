@@ -212,7 +212,11 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 75px;
+  width: 100%;
+  max-width: none;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .logo {
@@ -227,7 +231,7 @@ p {
 }
 
 .logo img {
-  height: 40px;
+  height: 70px;
   width: auto;
 }
 
@@ -262,8 +266,8 @@ p {
 
 .nav-list a {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.06em;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.82);
   padding-block: 0.4rem;
@@ -286,7 +290,7 @@ p {
 
 .nav-list a:hover,
 .nav-list a[aria-current="page"] {
-  color: var(--color-white);
+  color: var(--color-red);
 }
 
 .nav-list a:hover::after,
@@ -1088,6 +1092,18 @@ textarea:focus-visible {
   letter-spacing: 0.05em;
   margin-top: 0.4rem;
   display: block;
+}
+
+.cert-card--pending {
+  opacity: 0.8;
+  border-style: dashed;
+}
+
+.cert-badge {
+  display: block;
+  margin: 0 auto var(--space-sm);
+  width: 120px;
+  height: auto;
 }
 
 /* CTA banner (fine pagina) */
