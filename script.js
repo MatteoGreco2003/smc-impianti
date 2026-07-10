@@ -250,7 +250,7 @@ function initContactForm() {
   if (!form) return;
 
   const feedback = form.querySelector(".form-feedback");
-  const RECIPIENT_EMAIL = "info@smcimpianti.it"; // indirizzo a cui arrivano le richieste
+  const RECIPIENT_EMAIL = "info@smcimpianti.it";
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -262,10 +262,10 @@ function initContactForm() {
     let valid = true;
 
     requiredFields.forEach((field) => {
-      if (
-        !field.value.trim() ||
-        (field.type === "checkbox" && !field.checked)
-      ) {
+      const isEmpty = !field.value.trim();
+      const isUnchecked = field.type === "checkbox" && !field.checked;
+
+      if (isEmpty || isUnchecked) {
         valid = false;
         field.style.borderColor = "var(--color-red)";
       } else {
@@ -316,15 +316,25 @@ function initContactForm() {
 
     const body = bodyLines.filter((line) => line !== null).join("\n");
 
-    // Costruisce il link mailto: e apre il client di posta dell'utente
-    const mailtoUrl = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoUrl;
+    // URL Gmail compose
+    const gmailUrl =
+      "https://mail.google.com/mail/?" +
+      "view=cm&fs=1&tf=1" +
+      "&to=" +
+      encodeURIComponent(RECIPIENT_EMAIL) +
+      "&su=" +
+      encodeURIComponent(subject) +
+      "&body=" +
+      encodeURIComponent(body);
+
+    // apre Gmail in nuova tab
+    window.open(gmailUrl, "_blank");
 
     if (feedback) {
       feedback.textContent =
         lang === "en"
-          ? "Your email app should now open with the message ready — just hit send."
-          : "Si dovrebbe aprire il tuo programma di posta con il messaggio già pronto: ti basta premere invia.";
+          ? "Gmail should open in a new tab with the message ready — just hit send."
+          : "Dovrebbe aprirsi Gmail in una nuova scheda con il messaggio già pronto: ti basta premere invia.";
       feedback.style.color = "var(--color-navy)";
     }
   });
