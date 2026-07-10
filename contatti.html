@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-en="Contact — SMC Impianti" data-it="Contatti — SMC Impianti">
+      Contatti — SMC Impianti
+    </title>
+    <meta
+      name="description"
+      content="Contatta SMC Impianti per un preventivo o informazioni sui nostri servizi di saldatura e impiantistica."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=Source+Sans+3:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============================= HEADER ============================= -->
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img
+            src="logo-smc.png"
+            alt="Logo SMC Impianti"
+            data-en-alt="SMC Impianti logo"
+            onerror="this.style.display = 'none'"
+          />
+          <span>
+            <strong>SMC</strong> <span class="logo-accent">Impianti</span>
+            <span class="logo-sub" data-en="Welding &amp; Industrial Plants"
+              >Saldatura &amp; Impiantistica Industriale</span
+            >
+          </span>
+        </a>
+
+        <nav class="main-nav" id="main-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" data-en="Home">Home</a></li>
+            <li><a href="chi-siamo.html" data-en="About us">Chi siamo</a></li>
+            <li><a href="servizi.html" data-en="Services">Servizi</a></li>
+            <li><a href="galleria.html" data-en="Gallery">Galleria</a></li>
+            <li>
+              <a href="certificazioni.html" data-en="Certifications"
+                >Certificazioni</a
+              >
+            </li>
+            <li>
+              <a href="contatti.html" aria-current="page" data-en="Contact"
+                >Contatti</a
+              >
+            </li>
+          </ul>
+          <div
+            class="lang-switch"
+            role="group"
+            aria-label="Selettore lingua / Language selector"
+          >
+            <button type="button" data-lang-btn="it" class="is-active">
+              IT
+            </button>
+            <button type="button" data-lang-btn="en">EN</button>
+          </div>
+        </nav>
+
+        <button
+          class="hamburger"
+          aria-label="Apri menu"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- =========================== PAGE HERO =========================== -->
+      <section class="page-hero">
+        <div class="hero__grid" aria-hidden="true"></div>
+        <div class="container">
+          <div class="breadcrumb">
+            <a href="index.html" data-en="Home">Home</a> /
+            <span data-en="Contact">Contatti</span>
+          </div>
+          <div class="eyebrow" data-en="Get in touch">Contattaci</div>
+          <h1 data-en="Let's talk about your project">
+            Parliamo del tuo progetto
+          </h1>
+        </div>
+      </section>
+
+      <!-- =========================== CONTATTI =========================== -->
+      <section class="section">
+        <div class="container">
+          <div class="intro-block" style="align-items: start">
+            <!-- Informazioni di contatto -->
+            <div class="reveal">
+              <div class="eyebrow" data-en="Company details">Dati azienda</div>
+              <h2 data-en="Where to find us">Dove trovarci</h2>
+              <ul class="contact-info-list">
+                <li>
+                  <span class="label" data-en="Address">Indirizzo</span>
+                  <span
+                    >Strada Privata Gaudenzio Ferrari, 28/30 — San Pietro
+                    Mosezzo (NO), Italia</span
+                  >
+                </li>
+                <li>
+                  <span class="label" data-en="Phone">Telefono</span>
+                  <span><a href="tel:+390321474280">0321 474280</a></span>
+                </li>
+                <li>
+                  <span class="label" data-en="Email">Email</span>
+                  <span
+                    ><a href="mailto:info@smcimpianti.it"
+                      >info@smcimpianti.it</a
+                    ></span
+                  >
+                </li>
+                <li>
+                  <span class="label" data-en="Hours">Orari</span>
+                  <span
+                    data-en="Mon–Fri: 8:00–12:00, 13:00–17:00&lt;br&gt;Sat–Sun: closed"
+                    >Lun–Ven: 8:00–12:00, 13:00–17:00<br />Sab–Dom: chiuso</span
+                  >
+                </li>
+              </ul>
+
+              <div class="map-placeholder reveal" style="margin-top: 1.75rem">
+                <!-- Mappa centrata sulla sede reale (coordinate fornite dal cliente) -->
+                <iframe
+                  title="Mappa sede SMC Impianti"
+                  data-en-title="SMC Impianti location map"
+                  src="https://www.google.com/maps?q=45.49031612801249,8.5648631932531&output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                >
+                </iframe>
+              </div>
+            </div>
+
+            <!-- Form di contatto -->
+            <div class="reveal">
+              <div class="eyebrow" data-en="Request a quote">
+                Richiedi un preventivo
+              </div>
+              <h2 data-en="Send us a message">Inviaci un messaggio</h2>
+              <form id="contact-form" novalidate>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="name" data-en="Full name">Nome e cognome</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="Mario Rossi"
+                      data-en-placeholder="John Smith"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      placeholder="mario.rossi@azienda.it"
+                      data-en-placeholder="john.smith@company.com"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="phone" data-en="Phone (optional)"
+                      >Telefono (facoltativo)</label
+                    >
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="+39 000 000 0000"
+                      data-en-placeholder="+1 000 000 0000"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="subject" data-en="Subject">Oggetto</label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      placeholder="Es. Richiesta preventivo"
+                      data-en-placeholder="E.g. Quotation request"
+                    />
+                  </div>
+                  <div class="field full">
+                    <label for="message" data-en="Message">Messaggio</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      required
+                      placeholder="Descrivi il tuo progetto o la tua richiesta..."
+                      data-en-placeholder="Describe your project or your request..."
+                    ></textarea>
+                  </div>
+                  <div class="field full">
+                    <label class="checkbox-field">
+                      <input
+                        type="checkbox"
+                        id="privacy"
+                        name="privacy"
+                        required
+                      />
+                      <span
+                        data-en="I have read and accept the Privacy Policy for the processing of my personal data."
+                        >Ho letto e accetto l'Informativa sulla Privacy per il
+                        trattamento dei miei dati personali.</span
+                      >
+                    </label>
+                  </div>
+                  <div class="field full">
+                    <button
+                      type="submit"
+                      class="btn btn--primary"
+                      data-en="Open email &amp; send"
+                    >
+                      Apri email e invia
+                    </button>
+                    <p
+                      style="
+                        margin-top: 0.9rem;
+                        font-size: 0.82rem;
+                        color: var(--color-ink-soft);
+                      "
+                      data-en="Clicking the button opens your email app with the message ready to send — no data passes through our servers."
+                    >
+                      Cliccando sul bottone si apre il tuo programma di posta
+                      con il messaggio già pronto da inviare: nessun dato passa
+                      dai nostri server.
+                    </p>
+                    <p
+                      class="form-feedback"
+                      style="margin-top: 0.6rem; font-size: 0.9rem"
+                      aria-live="polite"
+                    ></p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================= FOOTER ============================= -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h4 data-en="SMC Impianti">SMC Impianti</h4>
+            <p
+              data-en="Welding, piping and industrial plant construction. Quality, precision and safety in every project."
+            >
+              Saldatura, piping e realizzazione di impianti industriali.
+              Qualità, precisione e sicurezza in ogni commessa.
+            </p>
+          </div>
+          <div>
+            <h4 data-en="Contact">Contatti</h4>
+            <address>
+              Strada Privata Gaudenzio Ferrari, 28/30<br />
+              San Pietro Mosezzo (NO), Italia<br />
+              <a href="tel:+390321474280">0321 474280</a><br />
+              <a href="mailto:info@smcimpianti.it">info@smcimpianti.it</a>
+            </address>
+          </div>
+          <div>
+            <h4 data-en="Company">Azienda</h4>
+            <ul>
+              <li><a href="chi-siamo.html" data-en="About us">Chi siamo</a></li>
+              <li><a href="servizi.html" data-en="Services">Servizi</a></li>
+              <li>
+                <a href="certificazioni.html" data-en="Certifications"
+                  >Certificazioni</a
+                >
+              </li>
+              <li><a href="contatti.html" data-en="Contact">Contatti</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span
+            data-en="&copy; 2026 SMC Impianti Industriali S.r.l. — VAT IT02354690030"
+            >&copy; 2026 SMC Impianti Industriali S.r.l. — P.IVA
+            02354690030</span
+          >
+          <div class="footer-legal">
+            <a href="#" data-en="Privacy Policy">Privacy Policy</a>
+            <a href="#" data-en="Cookie Policy">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

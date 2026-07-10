@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-en="Gallery — SMC Impianti" data-it="Galleria — SMC Impianti">
+      Galleria — SMC Impianti
+    </title>
+    <meta
+      name="description"
+      content="Foto di macchinari, officina e impianti realizzati da SMC Impianti."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=Source+Sans+3:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============================= HEADER ============================= -->
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img
+            src="logo-smc.png"
+            alt="Logo SMC Impianti"
+            data-en-alt="SMC Impianti logo"
+            onerror="this.style.display = 'none'"
+          />
+          <span>
+            <strong>SMC</strong> <span class="logo-accent">Impianti</span>
+            <span class="logo-sub" data-en="Welding &amp; Industrial Plants"
+              >Saldatura &amp; Impiantistica Industriale</span
+            >
+          </span>
+        </a>
+
+        <nav class="main-nav" id="main-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" data-en="Home">Home</a></li>
+            <li><a href="chi-siamo.html" data-en="About us">Chi siamo</a></li>
+            <li><a href="servizi.html" data-en="Services">Servizi</a></li>
+            <li>
+              <a href="galleria.html" aria-current="page" data-en="Gallery"
+                >Galleria</a
+              >
+            </li>
+            <li>
+              <a href="certificazioni.html" data-en="Certifications"
+                >Certificazioni</a
+              >
+            </li>
+            <li><a href="contatti.html" data-en="Contact">Contatti</a></li>
+          </ul>
+          <div
+            class="lang-switch"
+            role="group"
+            aria-label="Selettore lingua / Language selector"
+          >
+            <button type="button" data-lang-btn="it" class="is-active">
+              IT
+            </button>
+            <button type="button" data-lang-btn="en">EN</button>
+          </div>
+        </nav>
+
+        <button
+          class="hamburger"
+          aria-label="Apri menu"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- =========================== PAGE HERO =========================== -->
+      <section class="page-hero">
+        <div class="hero__grid" aria-hidden="true"></div>
+        <div class="container">
+          <div class="breadcrumb">
+            <a href="index.html" data-en="Home">Home</a> /
+            <span data-en="Gallery">Galleria</span>
+          </div>
+          <div class="eyebrow" data-en="Our work">I nostri lavori</div>
+          <h1 data-en="Machinery, workshop and plants">
+            Macchinari, officina e impianti
+          </h1>
+        </div>
+      </section>
+
+      <!-- =========================== GALLERIA =========================== -->
+      <section class="section">
+        <div class="container">
+          <div class="gallery-filter reveal">
+            <button
+              type="button"
+              data-filter="all"
+              class="is-active"
+              data-en="All"
+            >
+              Tutti
+            </button>
+            <button type="button" data-filter="saldatura" data-en="Welding">
+              Saldatura
+            </button>
+            <button type="button" data-filter="officina" data-en="Workshop">
+              Officina
+            </button>
+            <button type="button" data-filter="impianti" data-en="Plants">
+              Impianti
+            </button>
+          </div>
+
+          <div class="gallery-grid">
+            <figure class="gallery-item reveal" data-category="saldatura">
+              <img
+                src="https://images.unsplash.com/photo-1581093458791-9d42e3c2b6b7?q=80&amp;w=900&amp;auto=format&amp;fit=crop"
+                alt="Saldatore al lavoro con torcia TIG su lamiera metallica"
+                data-en-alt="Welder at work with TIG torch on a metal sheet"
+              />
+              <figcaption
+                class="gallery-item__caption"
+                data-en="TIG welding on stainless steel"
+              >
+                Saldatura TIG su acciaio inox
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item reveal" data-category="officina">
+              <img
+                src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&amp;w=900&amp;auto=format&amp;fit=crop"
+                alt="Interno dell'officina con banchi di lavoro e attrezzature"
+                data-en-alt="Workshop interior with workbenches and equipment"
+              />
+              <figcaption
+                class="gallery-item__caption"
+                data-en="Our fabrication workshop"
+              >
+                La nostra officina di fabbricazione
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item reveal" data-category="impianti">
+              <img
+                src="https://images.unsplash.com/photo-1533228876829-65c94e7b5025?q=80&amp;w=900&amp;auto=format&amp;fit=crop"
+                alt="Tubazioni industriali in un impianto di processo"
+                data-en-alt="Industrial piping in a process plant"
+              />
+              <figcaption
+                class="gallery-item__caption"
+                data-en="Process piping installation"
+              >
+                Installazione di piping di processo
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item reveal" data-category="saldatura">
+              <img
+                src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&amp;w=900&amp;auto=format&amp;fit=crop"
+                alt="Scintille di saldatura su una struttura metallica"
+                data-en-alt="Welding sparks on a metal structure"
+              />
+              <figcaption
+                class="gallery-item__caption"
+                data-en="Structural welding in progress"
+              >
+                Saldatura strutturale in corso
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item reveal" data-category="officina">
+              <img
+                src="https://images.unsplash.com/photo-1565043666747-69f6646db940?q=80&amp;w=900&amp;auto=format&amp;fit=crop"
+                alt="Macchinari da taglio e piegatura lamiera in officina"
+                data-en-alt="Sheet metal cutting and bending machinery in the workshop"
+              />
+              <figcaption
+                class="gallery-item__caption"
+                data-en="Cutting and forming equipment"
+              >
+                Attrezzature di taglio e piegatura
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item reveal" data-category="impianti">
+              <img
+                src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&amp;w=900&amp;auto=format&amp;fit=crop"
+                alt="Serbatoi e strutture di un impianto industriale completato"
+                data-en-alt="Tanks and structures of a completed industrial plant"
+              />
+              <figcaption
+                class="gallery-item__caption"
+                data-en="Completed process plant"
+              >
+                Impianto di processo completato
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item reveal" data-category="impianti">
+              <img
+                src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&amp;w=900&amp;auto=format&amp;fit=crop"
+                alt="Vista dall'alto di un impianto industriale con tubazioni"
+                data-en-alt="Aerial view of an industrial plant with piping"
+              />
+              <figcaption
+                class="gallery-item__caption"
+                data-en="Aerial view of a plant site"
+              >
+                Vista aerea di un impianto
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item reveal" data-category="saldatura">
+              <img
+                src="https://images.unsplash.com/photo-1620825141338-95ab29b7e7dd?q=80&amp;w=900&amp;auto=format&amp;fit=crop"
+                alt="Dettaglio di un giunto saldato su tubazione in acciaio"
+                data-en-alt="Detail of a welded joint on a steel pipe"
+              />
+              <figcaption
+                class="gallery-item__caption"
+                data-en="Certified welded pipe joint"
+              >
+                Giunto saldato certificato su tubazione
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item reveal" data-category="officina">
+              <img
+                src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&amp;w=900&amp;auto=format&amp;fit=crop"
+                alt="Tecnico che controlla un disegno tecnico in officina"
+                data-en-alt="Technician checking a technical drawing in the workshop"
+              />
+              <figcaption
+                class="gallery-item__caption"
+                data-en="Quality check against drawings"
+              >
+                Controllo qualità sui disegni tecnici
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================== CTA =============================== -->
+      <section class="cta-banner">
+        <div class="container reveal">
+          <h2 data-en="Like what you see?">Ti piace quello che vedi?</h2>
+          <p data-en="Let's talk about your next plant or welding project.">
+            Parliamo del tuo prossimo impianto o progetto di saldatura.
+          </p>
+          <a
+            href="contatti.html"
+            class="btn btn--primary"
+            data-en="Get in touch"
+            >Contattaci</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================= FOOTER ============================= -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h4 data-en="SMC Impianti">SMC Impianti</h4>
+            <p
+              data-en="Welding, piping and industrial plant construction. Quality, precision and safety in every project."
+            >
+              Saldatura, piping e realizzazione di impianti industriali.
+              Qualità, precisione e sicurezza in ogni commessa.
+            </p>
+          </div>
+          <div>
+            <h4 data-en="Contact">Contatti</h4>
+            <address>
+              Strada Privata Gaudenzio Ferrari, 28/30<br />
+              San Pietro Mosezzo (NO), Italia<br />
+              <a href="tel:+390321474280">0321 474280</a><br />
+              <a href="mailto:info@smcimpianti.it">info@smcimpianti.it</a>
+            </address>
+          </div>
+          <div>
+            <h4 data-en="Company">Azienda</h4>
+            <ul>
+              <li><a href="chi-siamo.html" data-en="About us">Chi siamo</a></li>
+              <li><a href="servizi.html" data-en="Services">Servizi</a></li>
+              <li>
+                <a href="certificazioni.html" data-en="Certifications"
+                  >Certificazioni</a
+                >
+              </li>
+              <li><a href="contatti.html" data-en="Contact">Contatti</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span
+            data-en="&copy; 2026 SMC Impianti Industriali S.r.l. — VAT IT02354690030"
+            >&copy; 2026 SMC Impianti Industriali S.r.l. — P.IVA
+            02354690030</span
+          >
+          <div class="footer-legal">
+            <a href="#" data-en="Privacy Policy">Privacy Policy</a>
+            <a href="#" data-en="Cookie Policy">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Lightbox per la galleria -->
+    <div class="lightbox" aria-hidden="true">
+      <button type="button" class="lightbox__close" aria-label="Chiudi">
+        &times;
+      </button>
+      <button
+        type="button"
+        class="lightbox__nav lightbox__nav--prev"
+        aria-label="Immagine precedente"
+      >
+        &#8249;
+      </button>
+      <div>
+        <img src="" alt="" />
+        <p class="lightbox__caption"></p>
+      </div>
+      <button
+        type="button"
+        class="lightbox__nav lightbox__nav--next"
+        aria-label="Immagine successiva"
+      >
+        &#8250;
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
