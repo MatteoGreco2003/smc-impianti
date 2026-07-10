@@ -1144,6 +1144,41 @@ textarea:focus-visible {
   }
 }
 
+.scroll-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: var(--color-red); /* usa il tuo rosso principale */
+  color: #ffffff; /* freccia bianca */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 180ms ease-out,
+    transform 180ms ease-out,
+    box-shadow 180ms ease-out;
+}
+
+.scroll-top:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* classe quando è visibile */
+.scroll-top--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* --------------------------------------------------------------------
    11. RESPONSIVE
    -------------------------------------------------------------------- */

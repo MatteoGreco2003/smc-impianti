@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initGalleryFilter();
   initLightbox();
   initContactForm();
+  initScrollTop();
 });
 
 /* --------------------------------------------------------------------
@@ -337,5 +338,31 @@ function initContactForm() {
           : "Dovrebbe aprirsi Gmail in una nuova scheda con il messaggio già pronto: ti basta premere invia.";
       feedback.style.color = "var(--color-navy)";
     }
+  });
+}
+
+/* --------------------------------------------------------------------
+   6. PULSANTE "TORNA SU"
+   Compare dopo un po' di scroll, porta in alto con scroll smooth
+   -------------------------------------------------------------------- */
+function initScrollTop() {
+  const btn = document.querySelector(".scroll-top");
+  if (!btn) return;
+
+  // mostra/nasconde il bottone in base allo scroll
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 200) {
+      btn.classList.add("scroll-top--visible");
+    } else {
+      btn.classList.remove("scroll-top--visible");
+    }
+  });
+
+  // click → scroll verso l'alto
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   });
 }
