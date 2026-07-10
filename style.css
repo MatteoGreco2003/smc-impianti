@@ -426,6 +426,7 @@ p {
   font-size: 0.75rem;
   letter-spacing: 0.04em;
   color: rgba(255, 255, 255, 0.45);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .footer-bottom .footer-legal {
@@ -435,6 +436,47 @@ p {
 
 .footer-bottom a:hover {
   color: var(--color-white);
+}
+
+.footer-social-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+}
+
+.footer-social-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.footer-social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.75);
+  transition: all var(--transition);
+  font-size: 0.9rem; /* dimensione dell'icona Font Awesome */
+}
+
+.footer-social-icons a:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
 }
 
 /* --------------------------------------------------------------------
@@ -1281,6 +1323,11 @@ textarea:focus-visible {
   }
 
   .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-social-row {
     flex-direction: column;
     align-items: flex-start;
   }
