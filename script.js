@@ -117,20 +117,17 @@ function applyLanguage(lang) {
 /* --------------------------------------------------------------------
    3. ANIMAZIONI ON-SCROLL
    Le sezioni/card con classe "reveal" appaiono con fade-in / slide-up
-   quando entrano nel viewport. Rispetta prefers-reduced-motion.
+   quando entrano nel viewport.
    -------------------------------------------------------------------- */
 function initScrollReveal() {
-  const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
-  ).matches;
   const items = document.querySelectorAll(".reveal");
 
-  if (reduceMotion || !("IntersectionObserver" in window)) {
+  if (!("IntersectionObserver" in window)) {
     items.forEach((el) => el.classList.add("is-visible"));
     return;
   }
 
-  // Piccolo sfalsamento automatico per elementi affiancati (card, griglie)
+  // sfalsamento
   items.forEach((el, i) => {
     el.style.setProperty("--delay", `${(i % 6) * 70}ms`);
   });
