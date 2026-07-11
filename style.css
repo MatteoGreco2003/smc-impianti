@@ -381,10 +381,12 @@ p {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: 2fr 1.5fr 1fr;
   gap: var(--space-lg);
-  padding-bottom: var(--space-lg);
+  padding-bottom: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+  justify-content: center;
 }
 
 .footer-grid h4 {
@@ -598,8 +600,13 @@ p {
   border: 1px solid var(--color-line);
   padding: var(--space-md);
   transition:
-    transform var(--transition),
-    border-color var(--transition);
+    /* transform var(--transition),
+    border-color var(--transition); */
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .card:hover {
@@ -612,6 +619,22 @@ p {
   height: 46px;
   margin-bottom: var(--space-sm);
   color: var(--color-red);
+  transition:
+    transform 220ms ease,
+    color 220ms ease,
+    opacity 220ms ease;
+}
+
+@media (hover: hover) {
+  .services-grid .card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(10, 35, 66, 0.28);
+    box-shadow: 0 14px 30px rgba(10, 35, 66, 0.08);
+  }
+  .services-grid .card:hover .card__icon {
+    transform: translateY(-2px);
+    color: var(--color-navy);
+  }
 }
 
 .card__icon svg {
@@ -1112,12 +1135,34 @@ textarea:focus-visible {
 }
 
 .cert-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-white);
   border: 1px solid var(--color-line);
   padding: var(--space-md);
   text-align: center;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
-.cert-card .cert-logo {
+@media (hover: hover) {
+  .cert-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(10, 35, 66, 0.28);
+    box-shadow: 0 14px 30px rgba(10, 35, 66, 0.08);
+  }
+}
+
+/* .cert-card:hover {
+  border-color: var(--color-navy);
+} */
+
+/* .cert-card .cert-logo {
   width: 72px;
   height: 72px;
   margin: 0 auto var(--space-sm);
@@ -1129,7 +1174,7 @@ textarea:focus-visible {
   font-family: var(--font-display);
   color: var(--color-navy);
   font-size: 0.85rem;
-}
+} */
 
 .cert-card .cert-code {
   font-family: var(--font-mono);
@@ -1150,7 +1195,33 @@ textarea:focus-visible {
   margin: 0 auto var(--space-sm);
   width: 120px;
   height: auto;
+  transition:
+    transform 220ms ease,
+    opacity 220ms ease,
+    filter 220ms ease;
 }
+
+@media (hover: hover) {
+  .cert-card:hover .cert-badge {
+    transform: translateY(-2px);
+    filter: saturate(1.05) contrast(1.02);
+  }
+
+  .cert-card--pending:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(10, 35, 66, 0.05);
+  }
+
+  .cert-card--pending:hover .cert-badge {
+    transform: none;
+    filter: none;
+  }
+}
+
+/* .cert-badge:hover {
+  transform: scale(1.1);
+  transition: transform var(--transition);
+} */
 
 /* CTA banner (fine pagina) */
 .cta-banner {
