@@ -363,3 +363,58 @@ function initScrollTop() {
     });
   });
 }
+
+function animateCounter(el) {
+  const target = Number(el.dataset.target || 0);
+  const suffix = el.dataset.suffix || "";
+  const duration = 2400;
+  const start = 0;
+  const startTime = performance.now();
+
+  function update(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(start + (target - start) * eased);
+
+    el.textContent = `${current}${suffix}`;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      el.textContent = `${target}${suffix}`;
+    }
+  }
+
+  requestAnimationFrame(update);
+}
+
+function initStatCounters() {
+  const counters = document.querySelectorAll(".stat__num");
+
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const el = entry.target;
+
+        if (!el.dataset.counted) {
+          el.dataset.counted = "true";
+          animateCounter(el);
+        }
+
+        obs.unobserve(el);
+      });
+    },
+    {
+      threshold: 0.6,
+    },
+  );
+
+  counters.forEach((counter) => observer.observe(counter));
+}
+
+initStatCounters();

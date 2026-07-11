@@ -650,6 +650,7 @@ p {
   color: var(--color-navy);
   line-height: 1;
   margin-bottom: 0.3rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .stat .stat__label {
@@ -1170,7 +1171,7 @@ textarea:focus-visible {
 /* --------------------------------------------------------------------
    10. ANIMAZIONI ON-SCROLL
    -------------------------------------------------------------------- */
-.reveal {
+/* .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition:
@@ -1181,6 +1182,42 @@ textarea:focus-visible {
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+} */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 1250ms ease,
+    transform 1250ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Varianti direzionali */
+.reveal.reveal--left,
+.reveal.reveal--right {
+  transition:
+    opacity 1800ms ease 100ms,
+    transform 1800ms cubic-bezier(0.22, 1, 0.36, 1) 100ms;
+}
+
+.reveal.reveal--left {
+  transform: translateX(-50px);
+}
+
+.reveal.reveal--right {
+  transform: translateX(50px);
+}
+
+.reveal.reveal--left.is-visible,
+.reveal.reveal--right.is-visible {
+  transform: translateX(0);
 }
 
 /* Sfalsamento leggero per elementi in griglia (gestito anche via JS con --delay) */
