@@ -1218,11 +1218,6 @@ textarea:focus-visible {
   }
 }
 
-/* .cert-badge:hover {
-  transform: scale(1.1);
-  transition: transform var(--transition);
-} */
-
 /* CTA banner (fine pagina) */
 .cta-banner {
   background: var(--color-navy);
@@ -1237,6 +1232,22 @@ textarea:focus-visible {
 .cta-banner p {
   color: rgba(255, 255, 255, 0.75);
   margin-bottom: var(--space-md);
+}
+
+.cta-banner__note {
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+}
+
+.cta-banner__note a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.cta-banner__note a:hover {
+  color: var(--color-red);
 }
 
 /* --------------------------------------------------------------------
