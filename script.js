@@ -112,6 +112,14 @@ function applyLanguage(lang) {
   if (titleEl) {
     document.title = lang === "en" ? titleEl.dataset.en : titleEl.dataset.it;
   }
+
+  // Testo delle option nelle select
+  document.querySelectorAll("option[data-en]").forEach((el) => {
+    if (!el.dataset.it) {
+      el.dataset.it = el.textContent.trim();
+    }
+    el.textContent = lang === "en" ? el.dataset.en : el.dataset.it;
+  });
 }
 
 /* --------------------------------------------------------------------
@@ -151,24 +159,50 @@ function initScrollReveal() {
    4. GALLERIA: FILTRO + LIGHTBOX
    -------------------------------------------------------------------- */
 function initGalleryFilter() {
-  const filterButtons = document.querySelectorAll("[data-filter]");
+  const filterButtons = document.querySelectorAll(
+    ".gallery-filter [data-filter]",
+  );
+  const filterSelect = document.querySelector("#gallery-category");
   const galleryItems = document.querySelectorAll(".gallery-item");
-  if (!filterButtons.length) return;
+
+  if (!filterButtons.length || !galleryItems.length) return;
+
+  let activeFilter = "all";
+
+  function applyFilter(filter) {
+    activeFilter = filter;
+
+    filterButtons.forEach((btn) => {
+      btn.classList.toggle(
+        "is-active",
+        btn.getAttribute("data-filter") === filter,
+      );
+    });
+
+    if (filterSelect) {
+      filterSelect.value = filter;
+    }
+
+    galleryItems.forEach((item) => {
+      const category = item.getAttribute("data-category");
+      const show = filter === "all" || filter === category;
+      item.style.display = show ? "" : "none";
+    });
+  }
 
   filterButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      filterButtons.forEach((b) => b.classList.remove("is-active"));
-      btn.classList.add("is-active");
-
-      const filter = btn.getAttribute("data-filter");
-
-      galleryItems.forEach((item) => {
-        const category = item.getAttribute("data-category");
-        const show = filter === "all" || filter === category;
-        item.style.display = show ? "" : "none";
-      });
+      applyFilter(btn.getAttribute("data-filter"));
     });
   });
+
+  if (filterSelect) {
+    filterSelect.addEventListener("change", () => {
+      applyFilter(filterSelect.value);
+    });
+  }
+
+  applyFilter(activeFilter);
 }
 
 function initLightbox() {

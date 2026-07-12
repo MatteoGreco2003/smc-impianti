@@ -100,23 +100,37 @@
       <section class="section">
         <div class="container">
           <div class="gallery-filter reveal">
-            <button
-              type="button"
-              data-filter="all"
-              class="is-active"
-              data-en="All"
-            >
-              Tutti
-            </button>
-            <button type="button" data-filter="saldatura" data-en="Welding">
-              Saldatura
-            </button>
-            <button type="button" data-filter="officina" data-en="Workshop">
-              Officina
-            </button>
-            <button type="button" data-filter="impianti" data-en="Plants">
-              Impianti
-            </button>
+            <div class="gallery-filter__buttons">
+              <button
+                type="button"
+                data-filter="all"
+                class="is-active"
+                data-en="All"
+              >
+                Tutti
+              </button>
+              <button type="button" data-filter="saldatura" data-en="Welding">
+                Saldatura
+              </button>
+              <button type="button" data-filter="officina" data-en="Workshop">
+                Officina
+              </button>
+              <button type="button" data-filter="impianti" data-en="Plants">
+                Impianti
+              </button>
+            </div>
+
+            <div class="gallery-filter__select-wrap">
+              <label for="gallery-category" class="sr-only"
+                >Filtro galleria</label
+              >
+              <select id="gallery-category" class="gallery-filter__select">
+                <option value="all" data-en="All">Tutti</option>
+                <option value="saldatura" data-en="Welding">Saldatura</option>
+                <option value="officina" data-en="Workshop">Officina</option>
+                <option value="impianti" data-en="Plants">Impianti</option>
+              </select>
+            </div>
           </div>
 
           <div class="gallery-grid">
