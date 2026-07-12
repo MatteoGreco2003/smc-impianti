@@ -1422,13 +1422,21 @@ textarea:focus-visible {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .stat-grid {
     grid-template-columns: repeat(2, 1fr);
     row-gap: var(--space-md);
   }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
   .intro-block {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
@@ -1498,14 +1506,13 @@ textarea:focus-visible {
     gap: var(--space-md);
   }
 
-  .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .footer-social-row {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .footer-bottom {
+    text-align: center;
   }
 
   .hero {
