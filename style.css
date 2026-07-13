@@ -440,8 +440,49 @@ p {
   color: var(--color-red);
 }
 
-.footer-contact-block + .footer-contact-block {
-  margin-top: 1.5rem;
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.footer-contact-item + .footer-contact-item {
+  margin-top: 0;
+}
+
+.footer-contact-item:nth-child(2) {
+  margin-top: 1rem;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.footer-contact-icon {
+  width: 18px;
+  min-width: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-red);
+  font-size: 1rem;
+  line-height: 1;
+  margin-top: 0.2rem;
+}
+
+.footer-contact-item address,
+.footer-contact-item a {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.72);
+  font-style: normal;
+}
+
+.footer-contact-item a:hover {
+  color: var(--color-red);
 }
 
 .footer-brand-logo {
@@ -545,11 +586,15 @@ p {
     margin-bottom: 1rem;
   }
 
-  .footer-col--brand .footer-contact-block {
-    margin-top: 1rem;
+  .footer-col--brand .footer-contact-list {
+    align-items: center;
   }
 
-  .footer-col--brand .footer-contact-block,
+  .footer-col--brand .footer-contact-item {
+    justify-content: center;
+    text-align: left;
+  }
+
   .footer-col--brand p,
   .footer-col--brand address,
   .footer-col--brand a {
@@ -719,11 +764,15 @@ p {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
 }
+.card-grid > .reveal {
+  height: 100%;
+}
 
 .card {
   background: var(--color-white);
   border: 1px solid var(--color-line);
   padding: var(--space-md);
+  height: 100%;
   transition:
     /* transform var(--transition),
     border-color var(--transition); */
@@ -734,10 +783,10 @@ p {
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
-.card:hover {
+/* .card:hover {
   transform: translateY(-4px);
   border-color: var(--color-navy);
-}
+} */
 
 .card__icon {
   width: 46px;
@@ -750,13 +799,14 @@ p {
     opacity 220ms ease;
 }
 
-@media (hover: hover) {
-  .services-grid .card:hover {
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
     transform: translateY(-6px);
     border-color: rgba(10, 35, 66, 0.28);
     box-shadow: 0 14px 30px rgba(10, 35, 66, 0.08);
   }
-  .services-grid .card:hover .card__icon {
+
+  .card:hover .card__icon {
     transform: translateY(-2px);
     color: var(--color-navy);
   }
@@ -1330,24 +1380,6 @@ textarea:focus-visible {
   }
 }
 
-/* .cert-card:hover {
-  border-color: var(--color-navy);
-} */
-
-/* .cert-card .cert-logo {
-  width: 72px;
-  height: 72px;
-  margin: 0 auto var(--space-sm);
-  border: 2px solid var(--color-navy);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  color: var(--color-navy);
-  font-size: 0.85rem;
-} */
-
 .cert-card .cert-code {
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -1367,8 +1399,10 @@ textarea:focus-visible {
 .cert-badge {
   display: block;
   margin: 0 auto var(--space-sm);
-  width: 120px;
-  height: auto;
+  width: auto;
+  height: 120px;
+  max-width: 140px;
+  object-fit: contain;
   transition:
     transform 220ms ease,
     opacity 220ms ease,
