@@ -62,10 +62,25 @@
             role="group"
             aria-label="Selettore lingua / Language selector"
           >
-            <button type="button" data-lang-btn="it" class="is-active">
-              IT
+            <button
+              type="button"
+              data-lang-btn="it"
+              class="is-active lang-flag"
+              aria-label="Italiano"
+              title="Italiano"
+            >
+              <img src="flag-it.png" alt="" aria-hidden="true" />
             </button>
-            <button type="button" data-lang-btn="en">EN</button>
+
+            <button
+              type="button"
+              data-lang-btn="en"
+              class="lang-flag"
+              aria-label="English"
+              title="English"
+            >
+              <img src="flag-en.png" alt="" aria-hidden="true" />
+            </button>
           </div>
         </nav>
 
@@ -278,83 +293,106 @@
 
     <!-- ============================= FOOTER ============================= -->
     <footer class="site-footer">
-      <div class="container">
+      <div class="site-footer__overlay"></div>
+
+      <div class="container site-footer__inner">
         <div class="footer-grid">
-          <div>
-            <h4 data-en="SMC Impianti">SMC Impianti</h4>
-            <p
-              data-en="Welding, piping and industrial plant construction. Quality, precision and safety in every project."
-            >
-              Saldatura, piping e realizzazione di impianti industriali.
-              Qualità, precisione e sicurezza in ogni commessa.
-            </p>
-          </div>
-          <div>
-            <h4 data-en="Contact">Contatti</h4>
-            <address>
-              Strada Privata Gaudenzio Ferrari, 28/30<br />
-              San Pietro Mosezzo (NO), Italia<br />
+          <div class="footer-col footer-col--brand">
+            <div class="footer-brand-logo">
+              <img
+                src="logo-smc.png"
+                alt="Logo SMC Impianti"
+                data-en-alt="SMC Impianti logo"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+
+            <div class="footer-contact-block">
+              <address>
+                Strada Privata Gaudenzio Ferrari, 28/30<br />
+                San Pietro Mosezzo (NO), Italia
+              </address>
+            </div>
+
+            <div class="footer-contact-block">
               <a href="tel:+390321474280">0321 474280</a><br />
               <a href="mailto:info@smcimpianti.it">info@smcimpianti.it</a>
-            </address>
+            </div>
           </div>
-          <div>
-            <h4 data-en="Company">Azienda</h4>
-            <ul>
+
+          <div class="footer-col">
+            <h4 data-en="Company">La nostra azienda</h4>
+            <ul class="footer-links">
               <li><a href="chi-siamo.html" data-en="About us">Chi siamo</a></li>
               <li><a href="servizi.html" data-en="Services">Servizi</a></li>
+              <li><a href="galleria.html" data-en="Gallery">Galleria</a></li>
               <li>
-                <a href="certificazioni.html" data-en="Certifications"
-                  >Certificazioni</a
-                >
+                <a href="certificazioni.html" data-en="Certifications">
+                  Certificazioni
+                </a>
               </li>
               <li><a href="contatti.html" data-en="Contact">Contatti</a></li>
             </ul>
           </div>
-        </div>
 
-        <div class="footer-social-row">
-          <span class="footer-social-label" data-en="Follow us">
-            Seguici sui social
-          </span>
-          <div class="footer-social-icons">
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <i class="fa fa-linkedin"></i>
-            </a>
-            <a
-              href="https://www.instagram.com/smcimpiantisrl/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <i class="fa fa-instagram"></i>
-            </a>
-            <a
-              href="https://www.facebook.com/profile.php?id=100063464020242&locale=it_IT"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <i class="fa fa-facebook"></i>
-            </a>
+          <div class="footer-col">
+            <h4 data-en="Follow us">Seguici sui social</h4>
+
+            <div class="footer-social-icons">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <i class="fa fa-linkedin"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/smcimpiantisrl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <i class="fa fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100063464020242&locale=it_IT"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <i class="fa fa-facebook"></i>
+              </a>
+            </div>
+
+            <div class="footer-legal-links">
+              <a href="#" data-en="Privacy Policy">Privacy Policy</a>
+              <a href="#" data-en="Cookie Policy">Cookie Policy</a>
+            </div>
           </div>
         </div>
 
         <div class="footer-bottom">
-          <span
-            data-en="&copy; 2026 SMC Impianti Industriali S.r.l. — VAT IT02354690030 — REA NO-231235"
-          >
-            &copy; 2026 SMC Impianti Industriali S.r.l. — P.IVA 02354690030 —
-            REA NO-231235
-          </span>
-          <div class="footer-legal">
-            <a href="#" data-en="Privacy Policy">Privacy Policy</a>
-            <a href="#" data-en="Cookie Policy">Cookie Policy</a>
+          <div class="footer-bottom-grid">
+            <div class="footer-bottom-item">
+              <span data-en="&copy; 2026 SMC Impianti Industriali S.r.l.">
+                &copy; 2026 SMC Impianti Industriali S.r.l.
+              </span>
+            </div>
+
+            <div class="footer-bottom-item">
+              <span data-en="VAT 02354690030">P.IVA 02354690030</span>
+            </div>
+
+            <div class="footer-bottom-item">
+              <span>REA NO-231235</span>
+            </div>
+
+            <div class="footer-bottom-item">
+              <span data-en="Share capital: € 15,000.00 fully paid">
+                Cap. Soc.: € 15.000,00 i.v.
+              </span>
+            </div>
           </div>
         </div>
       </div>
