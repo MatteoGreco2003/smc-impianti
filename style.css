@@ -1616,7 +1616,7 @@ textarea:focus-visible {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1270px) {
   .hamburger {
     display: block;
   }
@@ -1739,7 +1739,7 @@ textarea:focus-visible {
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 590px) {
   .process-grid {
     grid-template-columns: 1fr;
   }
@@ -1767,4 +1767,58 @@ textarea:focus-visible {
   min-height: calc(1.15em * 3);
   display: flex;
   align-items: flex-start;
+}
+
+@media (min-width: 1024px) and (max-width: 1144px) {
+  .index-grid .card h3 {
+    min-height: calc(1.15em * 4);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .index-grid .card h3 {
+    min-height: calc(1.15em * 3);
+  }
+}
+
+@media (max-width: 640px) {
+  .index-grid .card h3 {
+    min-height: calc(1.15em * 1);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1122px) {
+  .services-grid .card h3 {
+    min-height: calc(1.15em * 3);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 760px) {
+  .services-grid .card h3 {
+    min-height: calc(1.15em * 3);
+  }
+}
+
+@media (max-width: 640px) {
+  .services-grid .card h3 {
+    min-height: calc(1.15em * 1);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1144px) {
+  .process-grid .card h3 {
+    min-height: calc(1.15em * 3);
+  }
+}
+
+@media (min-width: 591px) and (max-width: 1024px) {
+  .process-grid .card h3 {
+    min-height: calc(1.15em * 2);
+  }
+}
+
+@media (max-width: 590px) {
+  .process-grid .card h3 {
+    min-height: calc(1.15em * 1);
+  }
 }
