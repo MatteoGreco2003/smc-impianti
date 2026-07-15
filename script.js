@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initGalleryFilter();
   initLightbox();
   initContactForm();
+  initJobForm();
   initScrollTop();
 });
 
@@ -136,8 +137,15 @@ function initScrollReveal() {
   }
 
   // sfalsamento
+  // items.forEach((el, i) => {
+  //   el.style.setProperty("--delay", `${(i % 6) * 70}ms`);
+  // });
+
+  // sfalsamento 2
   items.forEach((el, i) => {
-    el.style.setProperty("--delay", `${(i % 6) * 70}ms`);
+    if (!el.style.getPropertyValue("--delay")) {
+      el.style.setProperty("--delay", `${(i % 6) * 70}ms`);
+    }
   });
 
   const observer = new IntersectionObserver(
@@ -360,6 +368,105 @@ function initContactForm() {
       encodeURIComponent(body);
 
     // apre Gmail in nuova tab
+    window.open(gmailUrl, "_blank");
+
+    if (feedback) {
+      feedback.textContent =
+        lang === "en"
+          ? "Gmail should open in a new tab with the message ready — just hit send."
+          : "Dovrebbe aprirsi Gmail in una nuova scheda con il messaggio già pronto: ti basta premere invia.";
+      feedback.style.color = "var(--color-navy)";
+    }
+  });
+}
+
+/* --------------------------------------------------------------------
+   5bis. FORM LAVORA CON NOI
+   Stessa logica del form contatti: validazione base con bordo rosso
+   sui campi mancanti, poi apertura di Gmail con oggetto e messaggio
+   già precompilati.
+   -------------------------------------------------------------------- */
+function initJobForm() {
+  const form = document.querySelector("#job-form");
+  if (!form) return;
+
+  const feedback = form.querySelector(".form-feedback");
+  const RECIPIENT_EMAIL = "info@smcimpianti.it";
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const lang = document.documentElement.getAttribute("lang") || "it";
+
+    // Validazione minima lato client
+    const requiredFields = form.querySelectorAll("[required]");
+    let valid = true;
+
+    requiredFields.forEach((field) => {
+      const isEmpty = !field.value.trim();
+      const isUnchecked = field.type === "checkbox" && !field.checked;
+
+      if (isEmpty || isUnchecked) {
+        valid = false;
+        field.style.borderColor = "var(--color-red)";
+      } else {
+        field.style.borderColor = "var(--color-line)";
+      }
+    });
+
+    if (!valid) {
+      if (feedback) {
+        feedback.textContent =
+          lang === "en"
+            ? "Please fill in all required fields."
+            : "Compila tutti i campi obbligatori.";
+        feedback.style.color = "var(--color-red)";
+      }
+      return;
+    }
+
+    // Raccoglie i valori dei campi
+    const name = form.querySelector("#job-name").value.trim();
+    const email = form.querySelector("#job-email").value.trim();
+    const position = form.querySelector("#job-position").value;
+    const message = form.querySelector("#job-message").value.trim();
+
+    const subject =
+      lang === "en"
+        ? `Job application — ${position}`
+        : `Candidatura — ${position}`;
+
+    const bodyLines =
+      lang === "en"
+        ? [
+            `Full name: ${name}`,
+            `Email: ${email}`,
+            `Position: ${position}`,
+            "",
+            "Message:",
+            message || "(no message)",
+          ]
+        : [
+            `Nome e cognome: ${name}`,
+            `Email: ${email}`,
+            `Posizione di interesse: ${position}`,
+            "",
+            "Messaggio:",
+            message || "(nessun messaggio)",
+          ];
+
+    const body = bodyLines.join("\n");
+
+    const gmailUrl =
+      "https://mail.google.com/mail/?" +
+      "view=cm&fs=1&tf=1" +
+      "&to=" +
+      encodeURIComponent(RECIPIENT_EMAIL) +
+      "&su=" +
+      encodeURIComponent(subject) +
+      "&body=" +
+      encodeURIComponent(body);
+
     window.open(gmailUrl, "_blank");
 
     if (feedback) {
