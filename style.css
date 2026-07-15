@@ -761,11 +761,17 @@ p {
 /* Card generiche (servizi, valori, certificazioni) */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-md);
 }
 .card-grid > .reveal {
   height: 100%;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
 }
 
 .card {
@@ -797,6 +803,12 @@ p {
     transform 220ms ease,
     color 220ms ease,
     opacity 220ms ease;
+}
+
+.services-preview-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.2rem;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1690,4 +1702,69 @@ textarea:focus-visible {
     height: 50px;
     width: auto;
   }
+}
+/* ===== PROCESS — 4 fasi (stessa card dei servizi, numero al posto dell'icona) ===== */
+.process-grid {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: var(--space-lg);
+}
+
+.card__icon--num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  border: 2px solid var(--color-red);
+  border-radius: 50%;
+  color: var(--color-red);
+  transition: inherit;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .card__icon--num {
+    background: var(--color-red);
+    color: var(--color-white);
+  }
+}
+
+.process-cta {
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.process-grid .card,
+.services-grid .card {
+  display: flex;
+  flex-direction: column;
+}
+
+.process-grid .card h3,
+.services-grid .card h3 {
+  min-height: calc(1.15em * 2);
+  display: flex;
+  align-items: flex-start;
+}
+
+.index-grid .card {
+  display: flex;
+  flex-direction: column;
+}
+
+.index-grid .card h3 {
+  min-height: calc(1.15em * 3);
+  display: flex;
+  align-items: flex-start;
 }
